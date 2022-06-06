@@ -606,7 +606,7 @@ def train(args):
 
         # train and eval togither
         # early stop hook
-        early_stopping_hook = tf.contrib.estimator.stop_if_no_decrease_hook(
+        early_stopping_hook = tf.estimator.experimental.stop_if_no_decrease_hook(
             estimator=estimator,
             metric_name='loss',
             max_steps_without_decrease=num_train_steps,
