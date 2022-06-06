@@ -4,10 +4,15 @@
 ---
 ## 下载与安装
 Windows：
-- ~~Clone代码（目前github只有代码，模型文件太大，为了方便性，暂时不采取这种方式）~~
+- 模型文件[chinese_L-12_H-768_A-12](https://storage.googleapis.com/bert_models/2018_11_03/chinese_L-12_H-768_A-12.zip)需要单独下载
 - IDE打开（推荐Pycharm）
 - 安装必须的package
-
+```
+python               3.7
+tensorflow           1.15.0
+numpy                1.17.3(最新版跟tensorflow有兼容性问题)
+pandas               1.3.5
+```
 ---
 
 ## 项目结构
@@ -31,6 +36,11 @@ Windows：
     ├── predict.py                              # 示例分词文件
     └── train.py                                # 示例训练文件
 ```
+
+- chinese_L-12_H-768_A-12 
+下载地址：https://storage.googleapis.com/bert_models/2018_11_03/chinese_L-12_H-768_A-12.zip
+- bert地址  
+https://github.com/google-research/bert 包含了`chinese_L-12_H-768_A-12`下载地址
 ---
 
 ## 如何运行代码，对地址分词
