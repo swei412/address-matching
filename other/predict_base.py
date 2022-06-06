@@ -334,7 +334,9 @@ def participles_sequence(address, sequence):
             start = B_index[index]
             end = B_index[index+1]
             participles_address += ''.join(address[start:end])
-            participles_address += '/'
+            participles_address += ':'
+            participles_address += sequence[start][2:]
+            participles_address += '|'
         return participles_address
     else:
         return "序列长度有误"
