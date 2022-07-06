@@ -5,7 +5,8 @@ import os
 import re
 import string
 import pandas as pd
-
+import sys
+sys.path.append(os.getcwd())
 from bert_base.bert import tokenization
 from train.helper import get_args_parser
 
@@ -75,9 +76,10 @@ class AddressDataset(object):
     def __init__(self, file_path, dataset_save_dir):
         self.file_path = file_path
         self.dataset_save_dir = dataset_save_dir
-        self.labels = ['province', 'city', 'county', 'town', 'road', 'landmark', 'number', 'poi', 'orient', 'conj',
-                       'punc']
-        self.dataset_split = [0.6, 0.2, 0.2]
+        self.labels = ['prov', 'city', 'district', 'road', 'poi', 'houseno', 'cellno', 'roomno', 'town', 'redundant',
+                       'direction', 'assist', 'floorno', 'subpoi', 'roadno', 'community', 'village', 'group',
+                       'intersection', 'devzone', 'distance', 'subroad', 'traffic_facility', 'subroadno']
+        self.dataset_split = [0.7, 0.15, 0.15]
 
     def generate(self):
         if self.file_path.find('.xl') > 0:

@@ -17,7 +17,8 @@ def get_args_parser():
         bert_path = '/home/chinese_L-12_H-768_A-12/'
         root_path = '/home/BERT-BiLSTM-CRF-NER'
 
-    group1 = parser.add_argument_group('File Paths', 'config the path, checkpoint and filename of a pretrained/fine-tuned BERT model')
+    group1 = parser.add_argument_group('File Paths',
+                                       'config the path, checkpoint and filename of a pretrained/fine-tuned BERT model')
 
     # 1.data_dir是存放最终数据集的地方，使用自己数据训练一定记得确认数据集是否在如下目录（当前是：data/dataset）
     group1.add_argument('-data_dir', type=str, default=os.path.join(root_path, 'data/dataset'),
@@ -57,7 +58,6 @@ def get_args_parser():
     group2.add_argument('-num_train_epochs', type=float, default=10,
                         help='Total number of training epochs to perform.')
 
-
     group2.add_argument('-dropout_rate', type=float, default=0.5,
                         help='Dropout rate')
     group2.add_argument('-clip', type=float, default=0.5,
@@ -95,7 +95,7 @@ def get_args_parser():
 
     parser.add_argument('-verbose', action='store_true', default=False,
                         help='turn on tensorflow logging for debug')
-    parser.add_argument('-ner', type=str, default='ner', help='which modle to train')
+    parser.add_argument('-ner', type=str, default='ner', help='which model to train')
     parser.add_argument('-version', action='version', version='%(prog)s ' + __version__)
     return parser.parse_args()
 
