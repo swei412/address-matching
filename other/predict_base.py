@@ -324,10 +324,9 @@ def predict_one(address):
 def participles_sequence(address, sequence):
     if len(address) == len(sequence):
         B_index = []
-        for index in range(1, len(sequence)):
-            if str(sequence[index]).startswith('B'):
+        for index in range(len(sequence)):
+            if str(sequence[index]).startswith('B') or str(sequence[index]).startswith('S'):
                 B_index.append(index)
-        B_index.insert(0, 0)
         B_index.append(len(sequence))
         participles_address = ''
         for index in range(len(B_index)-1):
