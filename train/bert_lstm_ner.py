@@ -507,10 +507,10 @@ def train(args):
                 del_file(args.output_dir)
             except Exception as e:
                 print(e)
-                print('pleace remove the files of output dir and data.conf')
+                print('please remove the files of output dir and data.conf')
                 exit(-1)
 
-    #check output dir exists
+    # check output dir exists
     if not os.path.exists(args.output_dir):
         os.mkdir(args.output_dir)
 
@@ -541,7 +541,7 @@ def train(args):
         # 加载训练数据
         train_examples = processor.get_train_examples(args.data_dir)
         num_train_steps = int(
-            len(train_examples) *1.0 / args.batch_size * args.num_train_epochs)
+            len(train_examples) * 1.0 / args.batch_size * args.num_train_epochs)
         if num_train_steps < 1:
             raise AttributeError('training data is so small...')
         num_warmup_steps = int(num_train_steps * args.warmup_proportion)
@@ -604,7 +604,7 @@ def train(args):
             is_training=False,
             drop_remainder=False)
 
-        # train and eval togither
+        # train and eval together
         # early stop hook
         early_stopping_hook = tf.estimator.experimental.stop_if_no_decrease_hook(
             estimator=estimator,
