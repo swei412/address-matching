@@ -3,7 +3,7 @@
 
 ---
 ## 下载与安装
-Windows：
+Windows & Ubuntu：
 - 模型文件[chinese_L-12_H-768_A-12](https://storage.googleapis.com/bert_models/2018_11_03/chinese_L-12_H-768_A-12.zip)需要单独下载
 - IDE打开（推荐Pycharm）
 - 安装必须的package
@@ -14,6 +14,36 @@ numpy                1.17.3(最新版跟tensorflow有兼容性问题)
 pandas               1.3.5
 ```
 ---
+
+## DEMO
+使用48320条标注的地址数据训练后，DEMO见: `http://180.76.144.207/matching/index.html` ，训练数据标注的标签与本工程定义有些差别，标签如下：
+```
+prov:省份
+city:城市
+district:区县
+town:乡镇、街道
+road:道路
+subroad:子道路
+roadno:道路号
+subroadno:子道路号
+poi:POI
+subpoi:子POI
+houseno:楼号
+cellno:单元号
+roomno:房间号
+redundant:冗余数据
+direction:方向
+assist:连接词，如：与、和等
+floorno:楼层
+community:社区
+village:村
+group:村组
+intersection:关系词：交叉口等
+devzone:开发区
+distance:距离，如100米等
+traffic_facility:交通设施，红绿灯
+```
+标注好的地址数据下载地址: `http://180.76.144.207/matching/dataset_v2.tar.gz`
 
 ## 项目结构
 ```
