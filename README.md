@@ -12,11 +12,12 @@ python               3.7
 tensorflow           1.15.0
 numpy                1.17.3(最新版跟tensorflow有兼容性问题)
 pandas               1.3.5
+protobuf             3.20.1
 ```
 ---
 
 ## DEMO
-使用48320条标注的地址数据训练后，DEMO见: `http://180.76.144.207/matching/index.html` ，训练数据标注的标签与本工程定义有些差别，标签如下：
+使用48320条标注的地址数据训练后，训练数据标注的标签与本工程定义有些差别，标签如下：
 ```
 prov:省份
 city:城市
@@ -43,7 +44,7 @@ devzone:开发区
 distance:距离，如100米等
 traffic_facility:交通设施，红绿灯
 ```
-标注好的地址数据下载地址: `http://180.76.144.207/matching/dataset_v2.tar.gz`
+标注好的地址数据地址在dataset_v2/data.7z，解压后使用。
 
 ## 项目结构
 ```
